@@ -9,7 +9,7 @@ var App = React.createClass({
       <div className="container">
         <div className="row">
           <AddList />
-          <ListContainer />
+          <ListContainer title='Days Are Numbered' />
         </div>
       </div>
     )
