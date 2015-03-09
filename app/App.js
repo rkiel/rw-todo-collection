@@ -15,10 +15,18 @@ function addNewList(newList) {
   });
 }
 
+function removeFromList(index) {
+  var newList = this.state.list;
+  newList.splice(index, 1);
+  this.setState({
+    list: newList
+  });
+}
+
 function render() {
   var listItems = this.state.list.map(function(item){
     return (
-      <ListContainer title={item.newTitle} key={item.index} />
+      <ListContainer title={item.newTitle} key={item.index} remove={this.removeFromList.bind(null,item.index)} index={item.index} />
     );
   }.bind(this));
     return (
@@ -32,7 +40,8 @@ function render() {
   }
 var App = React.createClass({
   getInitialState: getInitialState,
-    addNewList: addNewList,
+  addNewList:      addNewList,
+  removeFromList:  removeFromList,
   render:          render
 });
 
