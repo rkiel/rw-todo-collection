@@ -1,4 +1,3 @@
-
 var React = require('react');
 
 function getInitialState() {
@@ -14,12 +13,12 @@ function handleChange(e) {
 }
 
 function handleSubmit(e) {
-    if(e.keyCode === 13){
-      this.props.add(this.state.newItem); // provided by parent
-      this.setState({
-        newItem: ''
-      });
-    }
+  if(e.keyCode === 13){
+    this.props.add(this.state.newItem); // provided by parent
+    this.setState({
+      newItem: ''
+    });
+  }
 }
 
 function render() {
