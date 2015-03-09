@@ -13,7 +13,7 @@ function handleChange(e) {
 }
 
 function handleSubmit(e) {
-  this.props.add(this.state.listName); // TODO: is this right?  should it be this.state?
+  this.props.add(this.state);
   this.setState({
     listName: ''
   });
@@ -25,7 +25,7 @@ function render() {
         <h3 className='text-center'>Create New List</h3>
         <span>List Name:</span>
         <input type='text' className="form-control" value={this.state.listName} onChange={this.handleChange} placeholder='List Name' />
-        <button className='btn btn-primary'>Submit</button>
+        <button onClick={this.handleSubmit} className='btn btn-primary'>Submit</button>
       </div>
   );
 }
